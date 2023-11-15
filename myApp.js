@@ -29,8 +29,11 @@ app.get('/json', function(req, res) {
         response = response.toUpperCase();
     }
     res.json({"message": response});
-}
-);
+});
+
+app.get('/:word/echo', function(req, res) {
+    res.json({"echo": req.params.word});
+})
 console.log("Hello World");
 
 
