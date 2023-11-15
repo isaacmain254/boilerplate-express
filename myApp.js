@@ -5,6 +5,11 @@ require('dotenv').config();
 // middleware for serving static files
 app.use('/public', express.static(__dirname + '/public'));
 
+// Logger middleware
+app.use(function(req, res, next) {
+    console.log(req.method + " " + req.path + " - " + req.ip);
+    next();
+});
 app.get('/', function(req, res) {
     res.sendFile(__dirname + '/views/index.html');
 });
