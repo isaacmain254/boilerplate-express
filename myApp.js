@@ -8,6 +8,11 @@ app.get('/', function(req, res) {
     res.sendFile(__dirname + '/views/index.html');
 });
 
+// api route
+app.get('/json', function(req, res) {
+    res.json({"message": "Hello json"});
+}
+);
 console.log("Hello World");
 
 
