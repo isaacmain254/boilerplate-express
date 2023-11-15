@@ -1,6 +1,10 @@
 let express = require('express');
 let app = express();
 require('dotenv').config();
+const bodyParser = require('body-parser');
+
+// body-parser middleware
+app.use(bodyParser.urlencoded({extended: false}));
 
 // middleware for serving static files
 app.use('/public', express.static(__dirname + '/public'));
